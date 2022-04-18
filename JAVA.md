@@ -87,4 +87,32 @@ JDK설치 확인
    - **글꼴**```General```→```Apperance```→```Colors and Fonts```→```Basic```→```Text Font```(글꼴 세로출력 , 12이상)
    - **취소 버퍼 크기** ```General```→```Editors```→```Text Editors```→```Undo history size : 20480, Display tab width :2```
    - **라인 번호** ```General```→```Editors```→```Text Editors```→```"Insert spaces for Tabs, Show Line Number"```
-   - **TAB의 공백 지정** ```Java```→```Code Style```→```Formatter```→```New..Button click```→```Profile name : Java```→```Indentation > Tab policy>"Spaces only"```→```Indentation size : 2 Tab size : 2```
+   - **TAB의 공백 지정** ```Java```→```Code Style```→```Formatter```→```New..Button click```→```Profile name : Java```→```Indentation > Tab policy>"Spaces only"```→```Indentation size : 2 Tab size : 2```\
+
+
+
+## 식별자
+
+- 클래스 이름, 메소드 이름, 변수 이름 등을 말한다
+- 이름 자체로 어느정도 내용을 알 수 있게해야함
+- 대소문자 구분! Test tese 서로 다름
+
+1. 식별자 규칙
+
+   1. 일반문자 사용가능
+   2. $, _ 를 제외한 모든 특수문자 사용불가
+   3. 숫자 두번째부터 사용가능 
+
+   - 잘못된 식별자 예
+
+     int 3Chapter; 숫자 사용
+
+     class if{} if는 자바의 예약어
+
+     char false; false는 사용불가
+
+     void null(){} nell 사용불가
+
+     class %calc{} %특수문자 불가
+
+2. 
