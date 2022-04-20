@@ -115,4 +115,97 @@ JDK설치 확인
 
      class %calc{} %특수문자 불가
 
-2. 
+2. 메소드명,필드,멤버변수 
+
+   1. 첫자는 일반적으로 소문자 사용
+   2. 메소드의 마디는 대문자 사용
+
+3. 변수(Variable)
+
+   1. 하나의 값을 저장할 수 있는 메모리 공간 (date 저장하는 그릇)
+   2. 변수는 데이타타입과 함께 선언하며, 초기화 한 후 사용한다
+   3. 메소드 내에서 선언된 변수는 로컬변수(local vairable)라고 칭하며 메소드 실행이 끝나면 메모리에서 자동삭제 된다
+
+
+
+## 데이터 타입
+
+모든 변수에는 타입이 존재하며 타입에 따라 저장할 수 있는 값의 종류와 범위가 달라짐
+
+!(데이터타입)[https://github.com/yhs0429/TIL/blob/master/png/java03_01.jpg?raw=true]
+
+1. 자바의 8가지 기본형 타입
+
+   1. 논리형 
+
+      - boolean : 1Byte(8 Bit)
+      - 값의 범위 : true , false
+
+   2. 문자형
+
+      - char : 2Byte(16Bit)
+      - 문자 한 글자를 나타냄 ,  ' ' 로 표현
+
+   3. 숫자형 ( 정수 )
+
+      - **long 타입은 뒤에 L을 붙인다 (int타입 보다 큰 정수일때)**
+
+        !(숫자형 정수)[]
+
+   4. 숫자형 ( 실수 ) 
+
+      - float : 4Byte  float 타입 변수에는 뒤에 f , F 를 붙여야 사용가능
+      - **double : 8Byte **
+
+## 참조 타입(레퍼런스 타입)
+
+- 클래스, 배열, 인터페이스
+- 변수에 참조값(해쉬코드)을 갖는다
+
+```
+   String  str = "왕눈이"; 
+            │ 
+            └----> 참조값(해쉬코드)
+            
+   StringBuffer *sb*  =  new  StringBuffer();
+
+
+
+   Object b = new Object(); 
+           │ 
+           └----> 참조값(해쉬코드) 
+
+
+   int[]   *ia*   = {100, 200, 300, 400, 500};
+
+```
+
+## 형변환 (data type casting)
+
+- 실수를 정수로 바꾸는것이 형변환
+- Casting시에는 데이터 짤림이 발생하는지 확인해야한다
+- 데이터 짤림이 발생하면 캐스팅은 피해야 한다 
+
+```
+
+        |              double        (자동 변환) 
+        |                                 ▲ 
+        |               float             | 
+        |                                 | 
+        |               long              | 
+        |                                 | 
+        |                int              | 
+        |                                 | 
+        |            short, char          | 
+       ▼                                  | 
+   (casting)            byte              | 
+
+```
+
+## 연산자
+
+- 연산에 사용되는 표시나 기호
+
+![연산](https://github.com/yhs0429/TIL/blob/master/png/java04-01.jpg)
+
+![증가/감소 연산자](https://github.com/yhs0429/TIL/blob/master/png/1.jpg)
