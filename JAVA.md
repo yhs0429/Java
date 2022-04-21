@@ -132,7 +132,7 @@ JDK설치 확인
 
 모든 변수에는 타입이 존재하며 타입에 따라 저장할 수 있는 값의 종류와 범위가 달라짐
 
-!(데이터타입)[https://github.com/yhs0429/TIL/blob/master/png/java03_01.jpg?raw=true]
+![데이터타입](https://github.com/yhs0429/TIL/blob/master/png/java03_01.jpg)
 
 1. 자바의 8가지 기본형 타입
 
@@ -161,6 +161,7 @@ JDK설치 확인
 
 - 클래스, 배열, 인터페이스
 - 변수에 참조값(해쉬코드)을 갖는다
+- String타입이 많이쓰임
 
 ```
    String  str = "왕눈이"; 
@@ -209,3 +210,194 @@ JDK설치 확인
 ![연산](https://github.com/yhs0429/TIL/blob/master/png/java04-01.jpg)
 
 ![증가/감소 연산자](https://github.com/yhs0429/TIL/blob/master/png/1.jpg)
+
+
+
+## 조건문(if,switch)
+
+**1. if문**
+
+- 조건식의 결과에 따라 블록 실행 여부가 결정됨
+
+- 조건식에는 true/false 값을 산출하는 연산식 or boolean 변수 사용 가능
+
+- 조건식이 true일 때 블록실행 , false면 블록 실행 안함
+
+  ``` 
+  if(조건식){
+  
+  	참일 경우 실행;
+  
+  	참일 경우 실행;
+  
+  }
+  ```
+
+
+**2.if-else문 + if-else문**
+
+- if문의 조건식이 true면 if블록을 실행하고 , false면 else 블록 실행되는 조건문
+- else if 는 제한없이 추가가능, 마지막에는 else로 끝낸다.
+
+```
+if(조건식){
+실행문;
+}else if(조건식){
+실행문;
+}else if(조건식){
+실행문;
+}else{
+실행문;
+}
+```
+
+**3.중첩if문**
+
+- if문 내부에 if문을 또 사용한 것
+
+```
+if (조건식){
+	if(조건식){
+		실행문;
+	} else {
+		실행문;
+  }else{
+  	실행문;
+  } 
+}
+```
+
+**4.switch문**
+
+- switch문에는 조건식 사용안함
+- 변수의 값에 따른 실행문을 선택해서 실행문이 결정됨 (if문 보다 간결하게 작성가능)
+- switch() 괄호안에는 정수타입 , String타입 의 변수만 들어갈수있음
+- case뒤에는 **break;** 가 있어야 한다
+- case가 없으면 default 실행 (default 생략가능)
+
+```
+switch(정수타입,String타입){
+case 1: 실행문1; break;
+case 2: 실행문2; break;
+case 3: 실행문3; break;
+default: 실행문4; break; // defualt 생략가능
+}
+```
+
+## 반복문 
+
+**1.for문**
+
+- 지정한 횟수만큼 실행문을 반복하는 반복문 , 반복시킬 횟수를 알고 있을때 사용하는것이 일반적
+- 초기화식에서 루프 카운트변수를 선언할때에는 부동소수점 타입 사용 x 
+
+```
+for(int i=0; i<5 i++){
+실행문;
+}
+```
+
+```
+for문 도 중첩가능
+for(int i=0; i<5; i++){
+	for(int j=0; j<5; j++){
+	System.out.println("i="+i+", j="+j+)
+	}
+}
+```
+
+**2.while문**
+
+- while문 은 조건식이 true면 무한반복 (false 되면 멈춤)
+- 조건식에는 true/false 값을 내는 연산식이나 boolean 변수 사용
+- 무한반복되는 while문을 빠져나가기 위해 break를 사용함
+
+```
+while(조건식){
+실행문;
+}
+```
+
+```
+while문 도 중첩가능
+while(조건식){
+실행문;
+	while(조건식){
+	실행문;
+	}
+}
+```
+
+**3.do-while문**
+
+- 실행문부터 먼저 실행하고, 실행문의 결과에 따라 루프 여부를 결정할때 쓰는 반복문
+
+```
+do{
+	실행문;
+}while(조건식);
+```
+
+```
+do-while문 예제
+	Scanner sc = new Scanner(System.in);
+	int sum = 0;
+	int n;
+	do {
+		String input = sc.nextLine();
+		n = Integer.parseInt(input);
+		sum += n;
+	} while (n != 0);
+	System.out.println(sum);
+	}
+}
+```
+
+**4.break문**
+
+- switch문이나 반복문을 종료할때 씀
+
+```
+예제
+	int sum = 0;
+	int i;
+	for (i=1;;i++) {  // while (true) = for (;;)
+		sum += i;
+		if (sum>=100) break;
+	}
+	System.out.println("Sum: " + sum + ", i: " + i);
+	}
+}
+```
+
+- 반복문이 중첩되어 있는 경우, 가까운 반복문을 종료하며 바깥쪽 반복문은 종료안함
+- 바깥쪽 반복문까지 종료원할시 바깥쪽 반복문에 이름(라벨)붙이고 **break 이름;** 사용
+
+```
+	Outter: for (int i=0; i<10; i++) {
+		for (int j=0; j<10; j++) {
+			System.out.println("i: " + i + ", j: " + j);
+			if (j==3) break Outter;
+			}
+		}
+	}
+}
+```
+
+**5.continue 문**
+
+- continue문은 반복문(for,while,do-while문)에서만 사용
+- continue문은 breack문과 반대로 반복문의 조건식으로 이동하여 무한반복시킴
+
+```
+	// 1 - 100 중 3의 배수가 아닌 수의 합
+	int sum = 0;
+	for (int i=1; i<=100; i++) {
+		if (i%3==0) continue;  // 증감식으로 바로 이동, 3의 배수 건너뛰기
+		sum += i;
+		}
+		System.out.println(sum);
+	}
+}
+```
+
