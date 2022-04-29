@@ -512,5 +512,35 @@ do-while문 예제
 - 메소드와 비슷한 모양이지만 리턴 타입이 없고 클래스 이름과 동일
 - 클래스에 생성자가 명시적으로 선언되어 있는 경우에는 반드시 선언된 생성자를 호출해서 객체 생성해야함(기본생성자 호출 불가)
 
-### 생성자 오버로딩
+## 멤버메소드
+
+- C언어의 함수와 비슷
+- 데이터 처리 기능을 구현
+- 리턴값이 없는 메소드는 **void**형을 지정
+- 메소드가 받는 인수의 데이터 타입은 메소드를 호출하는 쪽과 일치해야함
+- 메소드 오버로딩(중복정의),오버리딩(재정의)기술로 확장됨
+- 메소드가 리턴하는 값과 리턴되는 값의 데이터 타입은 일치해야함
+
+```
+세금계산 메소드 
+   public int taxCalc(){        
+       return (int)(bonbong * 0.045 + 0.5);
+    }
+ 
+ 실수령액 계산 메소드 --
+    public int silsuCalc(){
+        return money - taxCalc();
+    }   
+ 
+ 데이터 출력메소드  -- 리턴값 없으므로 void형으로 지정
+   public void printPay(){
+      System.out.println("--------------------");
+       System.out.println("---12월 급여 내역---");
+       System.out.println("--------------------");
+       System.out.println("성명: " + name);
+       System.out.println("본봉: " + bonbong);
+       System.out.println("세금: " + taxCalc());
+       System.out.println("실수령액: " + silsuCalx());
+    }
+```
 
