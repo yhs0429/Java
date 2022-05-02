@@ -512,7 +512,7 @@ do-while문 예제
 - 메소드와 비슷한 모양이지만 리턴 타입이 없고 클래스 이름과 동일
 - 클래스에 생성자가 명시적으로 선언되어 있는 경우에는 반드시 선언된 생성자를 호출해서 객체 생성해야함(기본생성자 호출 불가)
 
-## 멤버메소드
+# 멤버메소드
 
 - C언어의 함수와 비슷
 - 데이터 처리 기능을 구현
@@ -542,5 +542,73 @@ do-while문 예제
        System.out.println("세금: " + taxCalc());
        System.out.println("실수령액: " + silsuCalx());
     }
+```
+
+- 매개변수 있는 메소드와 매개변수 없는 메소드
+  - 캡슐화된 멤버변수 초기화를 위한 setter메소드 선언(매개변수 존재)
+  - 캡슐화된 멤버변수의 값을 가져오기 위한 getter 메소드 선언(매개변수 존재안함)
+  - 멤버변수가 캡슐화 되어 다른 클래스에서 접근이 불가 할 때 setter,getter 메소드 추가하여 사용
+
+```
+   public void setName(String name){
+   
+    this.name = name;
+    }
+    public String getName(){
+    return name;
+    }
+   
+    public void setBonbong(int bonbong){
+    this.bonbong = bonbong;
+    }
+   
+    public int getBonbong(){
+    return bonbong;
+    }
+```
+
+## 변수의 유효 범위(scope)
+
+- 멤버 변수 (instance 변수)
+  - 변수가 메소드 밖에 선언되는 변수 (멤버변수,인스턴스변수,필드 라고 한다)
+  - 멤버 변수는 모든 메소드에서 사용 가능
+  - 메모리 모델에서 Heap 메모리 이용
+  - 변수 선언시 값을 주지 않아도 특정 값으로 초기화됨
+
+​		📌변수 사용 후 클래스의 객체 자체가 gc에 의해 회수 되기 전에는 할당받은 메모릴 계속 유지함 
+
+​			 불필요한 변수 사용은 메모리 낭비!!
+
+- 지역 변수 (Local Variable)
+  - 변수가 메소드 안에서 선언되는 것
+  - Stack 메모리를 이용
+  - 메소드의 이용이 끝나면 자동으로 메소드 영역이 없어져 변수도 회수됨
+  - 초기화를 해야 사용할 수 있다
+
+```
+public class Variable { 
+    //멤버 변수, 인스턴스 변수, 필드, Heap 
+    String movie = "트로이"; 
+     
+    //지역변수가 없음으로 전역변수가 출력 
+    public void show(){ 
+        System.out.println("show 메소드 영역:" + movie);//트로이 
+    } 
+     
+    //지역변수가 우선으로 출력됩니다. Stack 
+    public void title(){ 
+        String movie = "아마겟돈"; 
+        System.out.println("title 메소드 영역:" + movie);   
+        System.out.println("title this.movie:" + this.movie);  
+    } 
+     
+    public static void main(String[] args) { 
+     
+        Variable v = new Variable(); 
+        v.show(); 
+        v.title(); 
+    } 
+} 
+
 ```
 
