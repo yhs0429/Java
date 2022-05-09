@@ -6,14 +6,10 @@
 
 나라에서 공짜로 해주는거니 열심히 들어서 내꺼로 만들어보자 !
 
-
-
 ## Java 란 ?
 
 - 프로그래밍 언어 중에서 C, C++과 같은 **고급언어**에 속한다
 - 제임스 고슬링 형님께서 1991년 언어를 만들고 1995년 5월 공식적으로 발표했다
-
-
 
 ## Java의 특징
 
@@ -25,17 +21,17 @@
 - 다양한 애플리케이션 개발 가능 - 거의 모든 곳에서 실행되는 프로그램 개발 가능
 - 멀티 스레드(Multi - Thread) 구현가능 - 동시에 여러가지 작업 및 대용량 작업 처리 빠르게 가능
 - 동적 로딩(Dynamic Loading)지원 - 필요할때만 메모리 확보 , 유지보수 쉽고 빠르게 가능
+
   - 정적 로딩(Static Loading) - 처음부터 메모리 확보 , 메모리 많이잡아 먹음
 
 - 오픈 소스 라이브러리 풍부!
-
-
 
 ## Java 개발 환경 구축
 
 자바 파일은 (.java) JVM 으로만 실행할 수 있다.
 
-- **JDK**  (Java Devolopment Kit)
+- **JDK** (Java Devolopment Kit)
+
   - 자바 응용 개발 환경으로 **개발**에 필요한 도구 포함
   - 컴파일러, JRE , 클래스 라이브러리 , 샘플 등
 
@@ -43,15 +39,15 @@
   - 자바 실행 환경으로 JVM 역활을 하는 소프트웨어
   - 자바 실행 환경만 필요한 경우 사용
 
-``` 
-개발자들은 최신판이 아니라 구판을 사용 한다고 한다 ! 
+```
+개발자들은 최신판이 아니라 구판을 사용 한다고 한다 !
 🙄why? 최신판보다 구판이 오히려 안정적이며 모든 사람들이 최신판을 사용하지 않기 때문
 ```
 
 ```
-자바 설치 후 환경 변수 지정 
- - 환경 변수의 설정 (내 PC -> 속성 ->정보 -> 고습시스템 설정 -> 고급 -> 환경변수) 
-     . 경로와 경로사이는 반드시 ";"으로 구분을 해주어야 합니다. 
+자바 설치 후 환경 변수 지정
+ - 환경 변수의 설정 (내 PC -> 속성 ->정보 -> 고습시스템 설정 -> 고급 -> 환경변수)
+     . 경로와 경로사이는 반드시 ";"으로 구분을 해주어야 합니다.
      . 일반적으로 환경변수명은 대문자를 사용합니다.
      . path는 기존내용이 지워지지 않도록 키보드 Home 키를 누른후 작성한다.
 
@@ -59,7 +55,7 @@
   - CLASSPATH : .;%JAVA_HOME%\lib\tools.jar
   - Path : %JAVA_HOME%\bin;기존패스
             ; 구분값
-            
+
 JDK설치 확인
  - cmd 창에서 JDK설치 확인
  java -version
@@ -67,10 +63,8 @@ JDK설치 확인
  echo %CLASSPATH%
  echo %path%
  javac
- java            
+ java
 ```
-
-
 
 ## 이클립스
 
@@ -78,16 +72,16 @@ JDK설치 확인
 
 1. 이클립스 셋팅
 
-   - 유니코드 UTF-8 로 변경  
+   - 유니코드 UTF-8 로 변경
 
-   ```Window ``` →```General```→```Content Types```→```Text```→```Default encoding UTF-8 설정```
+   `Window ` →`General`→`Content Types`→`Text`→`Default encoding UTF-8 설정`
 
-   ```General```→```workspace```→```Text file encoding UTF-8확인```
+   `General`→`workspace`→`Text file encoding UTF-8확인`
 
-   - **글꼴**```General```→```Apperance```→```Colors and Fonts```→```Basic```→```Text Font```(글꼴 세로출력 , 12이상)
-   - **취소 버퍼 크기** ```General```→```Editors```→```Text Editors```→```Undo history size : 20480, Display tab width :2```
-   - **라인 번호** ```General```→```Editors```→```Text Editors```→```"Insert spaces for Tabs, Show Line Number"```
-   - **TAB의 공백 지정** ```Java```→```Code Style```→```Formatter```→```New..Button click```→```Profile name : Java```→```Indentation > Tab policy>"Spaces only"```→```Indentation size : 2 Tab size : 2```\
+   - **글꼴**`General`→`Apperance`→`Colors and Fonts`→`Basic`→`Text Font`(글꼴 세로출력 , 12이상)
+   - **취소 버퍼 크기** `General`→`Editors`→`Text Editors`→`Undo history size : 20480, Display tab width :2`
+   - **라인 번호** `General`→`Editors`→`Text Editors`→`"Insert spaces for Tabs, Show Line Number"`
+   - **TAB의 공백 지정** `Java`→`Code Style`→`Formatter`→`New..Button click`→`Profile name : Java`→`Indentation > Tab policy>"Spaces only"`→`Indentation size : 2 Tab size : 2`\
 
 ## 식별자
 
@@ -98,8 +92,8 @@ JDK설치 확인
 1. 식별자 규칙
 
    1. 일반문자 사용가능
-   2. $, _ 를 제외한 모든 특수문자 사용불가
-   3. 숫자 두번째부터 사용가능 
+   2. $, \_ 를 제외한 모든 특수문자 사용불가
+   3. 숫자 두번째부터 사용가능
 
    - 잘못된 식별자 예
 
@@ -113,7 +107,7 @@ JDK설치 확인
 
      class %calc{} %특수문자 불가
 
-2. 메소드명,필드,멤버변수 
+2. 메소드명,필드,멤버변수
 
    1. 첫자는 일반적으로 소문자 사용
    2. 메소드의 마디는 대문자 사용
@@ -124,8 +118,6 @@ JDK설치 확인
    2. 변수는 데이타타입과 함께 선언하며, 초기화 한 후 사용한다
    3. 메소드 내에서 선언된 변수는 로컬변수(local vairable)라고 칭하며 메소드 실행이 끝나면 메모리에서 자동삭제 된다
 
-
-
 ## 데이터 타입
 
 모든 변수에는 타입이 존재하며 타입에 따라 저장할 수 있는 값의 종류와 범위가 달라짐
@@ -134,7 +126,7 @@ JDK설치 확인
 
 1. 자바의 8가지 기본형 타입
 
-   1. 논리형 
+   1. 논리형
 
       - boolean : 1Byte(8 Bit)
       - 값의 범위 : true , false
@@ -142,7 +134,7 @@ JDK설치 확인
    2. 문자형
 
       - char : 2Byte(16Bit)
-      - 문자 한 글자를 나타냄 ,  ' ' 로 표현
+      - 문자 한 글자를 나타냄 , ' ' 로 표현
 
    3. 숫자형 ( 정수 )
 
@@ -150,9 +142,9 @@ JDK설치 확인
 
         !(숫자형 정수)[]
 
-   4. 숫자형 ( 실수 ) 
+   4. 숫자형 ( 실수 )
 
-      - float : 4Byte  float 타입 변수에는 뒤에 f , F 를 붙여야 사용가능
+      - float : 4Byte float 타입 변수에는 뒤에 f , F 를 붙여야 사용가능
       - **double : 8Byte **
 
 ## JVM의 메모리 사용영역
@@ -167,7 +159,7 @@ JDK설치 확인
 
    - 객체와 배열이 생성되는 영역
 
-   - 사용되지 않는 객체는 GC(Grabage Colletor)가 자동 제거 
+   - 사용되지 않는 객체는 GC(Grabage Colletor)가 자동 제거
 
 3. JVM 스택 영역(JVM Stack Area)
    - 각 스레드마다 하나씩 존재 , 스레드가 시작될 때 할당됨
@@ -181,17 +173,17 @@ JDK설치 확인
 - String타입이 많이쓰임
 
 ```
-   String  str = "왕눈이"; 
-            │ 
+   String  str = "왕눈이";
+            │
             └----> 참조값(해쉬코드)
-            
+
    StringBuffer *sb*  =  new  StringBuffer();
 
 
 
-   Object b = new Object(); 
-           │ 
-           └----> 참조값(해쉬코드) 
+   Object b = new Object();
+           │
+           └----> 참조값(해쉬코드)
 
 
    int[]   *ia*   = {100, 200, 300, 400, 500};
@@ -202,21 +194,21 @@ JDK설치 확인
 
 - 실수를 정수로 바꾸는것이 형변환
 - Casting시에는 데이터 짤림이 발생하는지 확인해야한다
-- 데이터 짤림이 발생하면 캐스팅은 피해야 한다 
+- 데이터 짤림이 발생하면 캐스팅은 피해야 한다
 
 ```
 
-        |              double        (자동 변환) 
-        |                                 ▲ 
-        |               float             | 
-        |                                 | 
-        |               long              | 
-        |                                 | 
-        |                int              | 
-        |                                 | 
-        |            short, char          | 
-       ▼                                  | 
-   (casting)            byte              | 
+        |              double        (자동 변환)
+        |                                 ▲
+        |               float             |
+        |                                 |
+        |               long              |
+        |                                 |
+        |                int              |
+        |                                 |
+        |            short, char          |
+       ▼                                  |
+   (casting)            byte              |
 
 ```
 
@@ -228,8 +220,6 @@ JDK설치 확인
 
 ![증가/감소 연산자](https://github.com/yhs0429/TIL/blob/master/png/1.jpg)
 
-
-
 ## 조건문(if,switch)
 
 ### if문
@@ -240,13 +230,13 @@ JDK설치 확인
 
 - 조건식이 true일 때 블록실행 , false면 블록 실행 안함
 
-  ``` 
+  ```
   if(조건식){
-  
+
   	참일 경우 실행;
-  
+
   	참일 경우 실행;
-  
+
   }
   ```
 
@@ -279,7 +269,7 @@ if (조건식){
 		실행문;
   }else{
   	실행문;
-  } 
+  }
 }
 ```
 
@@ -300,12 +290,12 @@ default: 실행문4; break; // defualt 생략가능
 }
 ```
 
-## 반복문 
+## 반복문
 
 ### for문
 
 - 지정한 횟수만큼 실행문을 반복하는 반복문 , 반복시킬 횟수를 알고 있을때 사용하는것이 일반적
-- 초기화식에서 루프 카운트변수를 선언할때에는 부동소수점 타입 사용 x 
+- 초기화식에서 루프 카운트변수를 선언할때에는 부동소수점 타입 사용 x
 
 ```
 for(int i=0; i<5 i++){
@@ -419,20 +409,23 @@ do-while문 예제
 
 ## 배열
 
-같은 타입의 많은 데이터를 순차적으로 저장하는 공간으로 인덱스를 사용함 
+같은 타입의 많은 데이터를 순차적으로 저장하는 공간으로 인덱스를 사용함
 
 - 배열은 객체로서 힙 영역에 생성, 배열 변수는 배열 객체를 참조함
-- 배열 타입도 참조 타입에 속하므로 null로 초기화 할 수 있다 
-- **장점** : 
+- 배열 타입도 참조 타입에 속하므로 null로 초기화 할 수 있다
+- **장점** :
+
   - 통일된 하나의 변수로 다량의 데이터를 처리할 수 있다
   - 반복문을 사용해서 많은 양의 데이터를 쉽게 처리 할 수 있다
 
 - **단점**:
+
   - 같은 타입의 데이터만 저장 할 수 있다
   - 배열의 길이를 생성할 때 결정하기 때문에 변경할 수 없다
   - 배열의 요소를 선언하고 전부 이용하지 않으면 심각한 메모리 낭비가 발생함
 
 - 배열의 사용 예:
+
   - 사이즈가 변경되지 않는 데이터 배열 (1~12월 , 월~일요일 , 학교의 학년 ....)
 
 - 다차원 배열 :
@@ -466,15 +459,15 @@ do-while문 예제
 
   객체의 필드와 메소드를 하나로 묶어서 구현 내용을 감춤. 외부 객체는 객체 내부의 구조를 알 수 없으며
 
-  해당 객체의 필드와 메소드만 이용 가능. 캡슐화하여 보호하는 이유는 외부의 잘못된 사용으로 객체가 
+  해당 객체의 필드와 메소드만 이용 가능. 캡슐화하여 보호하는 이유는 외부의 잘못된 사용으로 객체가
 
   손상되는 것을 방지하기 위함. 캡슐화를 위해 자바는 접근제한자(Access Modifier)를 사용함
 
 - 상속
 
-​		상위 객체의 필드와 메소드를 하위 객체에 물려주는 것. 하위 객체는 상위 객체를 확장해서 추가적인
+​ 상위 객체의 필드와 메소드를 하위 객체에 물려주는 것. 하위 객체는 상위 객체를 확장해서 추가적인
 
-​		필드와 메소드를 가질 수 있다
+​ 필드와 메소드를 가질 수 있다
 
 - 다형성
 
@@ -482,7 +475,7 @@ do-while문 예제
 
 ## 객체와 클래스
 
-- 자바에서는 클래스가 설계도에 해당  ✔**클래스(붕어빵틀) , 객체 (붕어빵)**
+- 자바에서는 클래스가 설계도에 해당 ✔**클래스(붕어빵틀) , 객체 (붕어빵)**
 
 - 클래스로부터 만들어진 객체를 해당 클래스의 인스턴스라고 하며, 그 과정을 인스턴스화 라고 한다
 - 객체의 구성요소
@@ -492,15 +485,13 @@ do-while문 예제
 ### 클래스 선언방법
 
 - 하나 이상의 문자로 구성
-- 첫글자는 숫자,$,_ 외의 특수문자,자바 키워드 불가
+- 첫글자는 숫자,$,\_ 외의 특수문자,자바 키워드 불가
 - 영어로 작성하는것이 관례 대소문자 구분
 - 각 단어의 첫문자를 대문자로
 
 ### 객체 생성 방법
 
 - new 연산자가 클래스로부터 객체 생성(인스턴스화) 역활을 함
-
-  
 
 ## 클래스의 구성 멤버
 
@@ -522,16 +513,16 @@ do-while문 예제
 - 메소드가 리턴하는 값과 리턴되는 값의 데이터 타입은 일치해야함
 
 ```
-세금계산 메소드 
-   public int taxCalc(){        
+세금계산 메소드
+   public int taxCalc(){
        return (int)(bonbong * 0.045 + 0.5);
     }
- 
+
  실수령액 계산 메소드 --
     public int silsuCalc(){
         return money - taxCalc();
-    }   
- 
+    }
+
  데이터 출력메소드  -- 리턴값 없으므로 void형으로 지정
    public void printPay(){
       System.out.println("--------------------");
@@ -551,17 +542,17 @@ do-while문 예제
 
 ```
    public void setName(String name){
-   
+
     this.name = name;
     }
     public String getName(){
     return name;
     }
-   
+
     public void setBonbong(int bonbong){
     this.bonbong = bonbong;
     }
-   
+
     public int getBonbong(){
     return bonbong;
     }
@@ -575,9 +566,9 @@ do-while문 예제
   - 메모리 모델에서 Heap 메모리 이용
   - 변수 선언시 값을 주지 않아도 특정 값으로 초기화됨
 
-​		📌변수 사용 후 클래스의 객체 자체가 gc에 의해 회수 되기 전에는 할당받은 메모릴 계속 유지함 
+​ 📌변수 사용 후 클래스의 객체 자체가 gc에 의해 회수 되기 전에는 할당받은 메모릴 계속 유지함
 
-​			 불필요한 변수 사용은 메모리 낭비!!
+​ 불필요한 변수 사용은 메모리 낭비!!
 
 - 지역 변수 (Local Variable)
   - 변수가 메소드 안에서 선언되는 것
@@ -586,29 +577,119 @@ do-while문 예제
   - 초기화를 해야 사용할 수 있다
 
 ```
-public class Variable { 
-    //멤버 변수, 인스턴스 변수, 필드, Heap 
-    String movie = "트로이"; 
-     
-    //지역변수가 없음으로 전역변수가 출력 
-    public void show(){ 
-        System.out.println("show 메소드 영역:" + movie);//트로이 
-    } 
-     
-    //지역변수가 우선으로 출력됩니다. Stack 
-    public void title(){ 
-        String movie = "아마겟돈"; 
-        System.out.println("title 메소드 영역:" + movie);   
-        System.out.println("title this.movie:" + this.movie);  
-    } 
-     
-    public static void main(String[] args) { 
-     
-        Variable v = new Variable(); 
-        v.show(); 
-        v.title(); 
-    } 
-} 
+public class Variable {
+    //멤버 변수, 인스턴스 변수, 필드, Heap
+    String movie = "트로이";
+
+    //지역변수가 없음으로 전역변수가 출력
+    public void show(){
+        System.out.println("show 메소드 영역:" + movie);//트로이
+    }
+
+    //지역변수가 우선으로 출력됩니다. Stack
+    public void title(){
+        String movie = "아마겟돈";
+        System.out.println("title 메소드 영역:" + movie);
+        System.out.println("title this.movie:" + this.movie);
+    }
+
+    public static void main(String[] args) {
+
+        Variable v = new Variable();
+        v.show();
+        v.title();
+    }
+}
 
 ```
 
+## Call By Value / Reference
+
+- Call By Value : 값에 의한 호출
+  - 메소드로 한 문자 , 상수 문자열, 숫자를 전달하면 전부 값에 의한 호출이라고 하고 Call By Value 라 한다
+
+```
+class Code {
+  public String getArea(int index){ // Call By Value
+    // 1차원 배열
+    String[] areas = {"서울", "천안", "대전", "대구", "광주", "강릉"};
+    //                        0       1       2        3         4       5
+
+    return areas[index-1]; // String return
+  }
+}
+public class CodeUse {
+
+  public static void main(String[] args) {
+    Code co = new Code();
+    String area = co.getArea(6);
+
+    System.out.println(area);
+
+  }
+
+}
+```
+
+- Call By Reference : 참조값에 의한 호출 (Hash Code)
+
+  - 메스드로 참조type 을 전송 할 수 있다
+
+  - 메소드로 클래스의 객체를 전달하면 메모리가 전달되는 것이 아닌 객체의 Hash Code가 전달됨으로
+
+    Call By Reference 라고 함
+
+  - Call By Reference의 경우 참조값(Hash Code)을 전달한 객체는 자신의 참조값이 전달됨으로 값의 변화가 발생할 수 있고 heap memory를 공유한다.
+
+```
+class Pay{
+int ppp;
+public void payRefer(Pay a){
+a.ppp = a.ppp + 2000;
+}
+public void payValue(int j){
+j = j + 2000;
+}
+}
+
+
+public class PayTest {
+public static void main(String[] args) {
+Pay p = new Pay();
+p.ppp = 10;
+
+int i = 10;
+
+p.payRefer(p); //call by reference로 전달
+p.payValue(i); //call by value로 전달
+
+System.out.println(p.ppp); //객체가 변경되서 2010
+System.out.println(i);//10
+}
+
+}
+```
+
+📌String 객체의 특징 !!
+
+- 한번생성된 객체는 불변이다
+
+- 클래스를 객체화할때 new를 사용하지만 String은 사용하지 않아도 된다
+
+- 메모리상에서 같은 문자열은 공유 한다
+
+  - String name = "크롱";
+
+  - String str = "크롱";
+
+    name hashcode와 str hashcode는 같다
+
+- 변경되는 객체가 있을 때 마다 새로운 객체가 만들어진다
+
+## Method Overloading
+
+- 같은 클래스 내에서 같은 이름의 메소드를 여러개 선언하는 것을 말한다
+
+- 호출하는 이름은 같지만 , 파라미터의 개수나 타입이 다르다 , 파라미터의 개수가 같다면 타입이 다름
+
+  return타입은 다를 수 있다
