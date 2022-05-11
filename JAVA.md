@@ -6,8 +6,6 @@
 
 나라에서 공짜로 해주는거니 열심히 들어서 내꺼로 만들어보자 !
 
-[반복문](반복문)
-
 ## Java 란 ?
 
 - 프로그래밍 언어 중에서 C, C++과 같은 **고급언어**에 속한다
@@ -234,11 +232,11 @@ JDK설치 확인
 
   ```
   if(조건식){
-  
+
   	참일 경우 실행;
-  
+
   	참일 경우 실행;
-  
+
   }
   ```
 
@@ -292,7 +290,7 @@ default: 실행문4; break; // defualt 생략가능
 }
 ```
 
-## [반복문](반복문)
+## 반복문
 
 ### for문
 
@@ -467,9 +465,9 @@ do-while문 예제
 
 - 상속
 
- 상위 객체의 필드와 메소드를 하위 객체에 물려주는 것. 하위 객체는 상위 객체를 확장해서 추가적인
+상위 객체의 필드와 메소드를 하위 객체에 물려주는 것. 하위 객체는 상위 객체를 확장해서 추가적인
 
- 필드와 메소드를 가질 수 있다
+필드와 메소드를 가질 수 있다
 
 - 다형성
 
@@ -568,9 +566,9 @@ do-while문 예제
   - 메모리 모델에서 Heap 메모리 이용
   - 변수 선언시 값을 주지 않아도 특정 값으로 초기화됨
 
- 📌변수 사용 후 클래스의 객체 자체가 gc에 의해 회수 되기 전에는 할당받은 메모릴 계속 유지함
+📌변수 사용 후 클래스의 객체 자체가 gc에 의해 회수 되기 전에는 할당받은 메모릴 계속 유지함
 
- 불필요한 변수 사용은 메모리 낭비!!
+불필요한 변수 사용은 메모리 낭비!!
 
 - 지역 변수 (Local Variable)
   - 변수가 메소드 안에서 선언되는 것
@@ -697,38 +695,38 @@ System.out.println(i);//10
   return타입은 다를 수 있다
 
 ```
-   - method overloading의 대표적인 경우 
-     System.out.println(1); 
-     System.out.println(1.5); 
-     System.out.println("우리는 한국인입니다."); 
-     System.out.println("IT 기술을 " + " 다양한 분야로 적용해야 합니다."); 
+   - method overloading의 대표적인 경우
+     System.out.println(1);
+     System.out.println(1.5);
+     System.out.println("우리는 한국인입니다.");
+     System.out.println("IT 기술을 " + " 다양한 분야로 적용해야 합니다.");
 
-   - 메소드 오버로딩을 사용하지 않는 경우  
-     public void printInt(int x){ }  
-     public void printFloat(float x){ } 
-     public void printString(String x){ }   
+   - 메소드 오버로딩을 사용하지 않는 경우
+     public void printInt(int x){ }
+     public void printFloat(float x){ }
+     public void printString(String x){ }
 
-     │ 
-     │ 
-     ↓ 
+     │
+     │
+     ↓
 
-     메소드 오버로딩을 적용한 경우 
+     메소드 오버로딩을 적용한 경우
 
-     public void println(int x){ }  
-     public void println(float x){ } 
-     public void println(String x){ } 
-     
-     
-     
-   - PrintStream 클래스의 메소드 오버로딩예 
-  
-     void print(char c){ }   //print('C') 
-           
-     void print(double d){ } //print(10.5) 
+     public void println(int x){ }
+     public void println(float x){ }
+     public void println(String x){ }
 
-     void print(float f){ }  //print(10.5f) 
 
-     void print(int i){ }    //print(10) 
+
+   - PrintStream 클래스의 메소드 오버로딩예
+
+     void print(char c){ }   //print('C')
+
+     void print(double d){ } //print(10.5)
+
+     void print(float f){ }  //print(10.5f)
+
+     void print(int i){ }    //print(10)
 ```
 
 - 메소드가 호출되는 경우 메소드의 인수 데이터 타입과 갯수가 일치하는 메소드가 호출된다
@@ -777,56 +775,56 @@ class MethodOverloading{
 
 ```
 // 기본 생성자 생략
-class School2{ 
-    int kuk = 0; 
-    int eng = 0; 
-    int tot = 0; 
-     
-    public int hap(){ 
-        tot = kuk+eng; 
-         
-        return tot; 
-    } 
-} 
+class School2{
+    int kuk = 0;
+    int eng = 0;
+    int tot = 0;
 
-public class SchoolMain2 { 
+    public int hap(){
+        tot = kuk+eng;
 
-    public static void main(String[] args) { 
-        School2 sc2 = new School2(); 
-        sc2.kuk=90; 
-        sc2.eng=100; 
-        System.out.println("hap: " + sc2.hap());         
-    } 
-} 
+        return tot;
+    }
+}
+
+public class SchoolMain2 {
+
+    public static void main(String[] args) {
+        School2 sc2 = new School2();
+        sc2.kuk=90;
+        sc2.eng=100;
+        System.out.println("hap: " + sc2.hap());
+    }
+}
 
 
 
 //기본 생성자 선언
-class School3{ 
-    int kuk = 0; 
-    int eng = 0; 
-    int tot = 0; 
+class School3{
+    int kuk = 0;
+    int eng = 0;
+    int tot = 0;
 
-    public School3(){ 
-         
-    } 
-     
-    public int hap(){ 
-        tot = kuk+eng; 
-         
-        return tot; 
-    } 
-} 
+    public School3(){
 
-public class SchoolMain3 { 
+    }
 
-    public static void main(String[] args) { 
-        School3 sc3 = new School3(); 
-        sc3.kuk=90; 
-        sc3.eng=100; 
-        System.out.println("hap: " + sc3.hap());         
-    } 
-} 
+    public int hap(){
+        tot = kuk+eng;
+
+        return tot;
+    }
+}
+
+public class SchoolMain3 {
+
+    public static void main(String[] args) {
+        School3 sc3 = new School3();
+        sc3.kuk=90;
+        sc3.eng=100;
+        System.out.println("hap: " + sc3.hap());
+    }
+}
 ```
 
 📌**기본생성자를 선언해야 하는 경우!!!**
@@ -835,39 +833,38 @@ public class SchoolMain3 {
 - 기본 생성자는 하는 일이 없어도 반드시 선언을 권장 !
 
 ```
-class School4{ 
-    int kuk = 0; 
-    int eng = 0; 
-    int tot = 0; 
+class School4{
+    int kuk = 0;
+    int eng = 0;
+    int tot = 0;
 
-    //기본 생성자 
-    public School4(){ } 
-     
-    //아래처럼 인수를 받는 생성자가 존재하면  
-    //반드시 기본 생성자를 명시적으로 선언해야 합니다. 
-    public School4(int kuk, int eng){ 
-        this.kuk = kuk; 
-        this.eng = eng; 
-    } 
-     
-    public int hap(){ 
-        tot = kuk+eng; 
-         
-        return tot; 
-    } 
-} 
+    //기본 생성자
+    public School4(){ }
 
-public class SchoolMain4 { 
+    //아래처럼 인수를 받는 생성자가 존재하면
+    //반드시 기본 생성자를 명시적으로 선언해야 합니다.
+    public School4(int kuk, int eng){
+        this.kuk = kuk;
+        this.eng = eng;
+    }
 
-    public static void main(String[] args) { 
-        School4 sc4 = new School4(); 
-        sc4.kuk=90; 
-        sc4.eng=100; 
-        System.out.println("hap: " + sc4.hap());   
+    public int hap(){
+        tot = kuk+eng;
 
-        School4 sc = new School4(90, 100); 
-        System.out.println("hap: " + sc.hap());   
-    } 
-} 
+        return tot;
+    }
+}
+
+public class SchoolMain4 {
+
+    public static void main(String[] args) {
+        School4 sc4 = new School4();
+        sc4.kuk=90;
+        sc4.eng=100;
+        System.out.println("hap: " + sc4.hap());
+
+        School4 sc = new School4(90, 100);
+        System.out.println("hap: " + sc.hap());
+    }
+}
 ```
-
