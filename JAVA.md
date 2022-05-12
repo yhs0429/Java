@@ -503,7 +503,7 @@ do-while문 예제
 - 메소드와 비슷한 모양이지만 리턴 타입이 없고 클래스 이름과 동일
 - 클래스에 생성자가 명시적으로 선언되어 있는 경우에는 반드시 선언된 생성자를 호출해서 객체 생성해야함(기본생성자 호출 불가)
 
-# 멤버메소드
+## 멤버메소드
 
 - C언어의 함수와 비슷
 - 데이터 처리 기능을 구현
@@ -865,6 +865,119 @@ public class SchoolMain4 {
 
         School4 sc = new School4(90, 100);
         System.out.println("hap: " + sc.hap());
+    }
+}
+```
+
+## static 변수(정적,클래스) ,static method(클래스 메소드)
+
+- 객체를 만들지 않고 변수나,메소드의 사용이 가능
+- 간단한 값을 처리할때 주로 쓰인다
+- 일반적인 클래스는 new를 이용하여 메모리 할당하지만 static 요소들은 new 없이 자동으로 메모리 할당됨
+
+```
+public class StaticTest{
+	public static int b = 0; // 최초 1회만 메모리 할당을 받고 모든 객체들이 공유함
+
+	private int a = 0; // 인스턴스 변수
+}
+
+public class Test{
+	public static void main(String[] args){
+	StaticTest s1 = new StaticTest();
+	StaticTest s2 = new StaticTest();
+	//객체를 생성 후 s1,s2로 각각의 멤버변수 a 영역에 접근가능
+	}
+}
+```
+
+```
+statcl 변수 예제
+
+class ScjpPass{
+    //멤버 변수, Heap
+    int t1=0;
+    int t2=0;
+    int t3=0;
+    int t4=0;
+
+    //클래스 변수, Data area
+    static int BONUS=100;
+
+    //생성자, Source area
+    public ScjpPass(){
+    }
+
+    //생성자, this = sp객체가 가지고 있는 hash code
+    //sp객체의 heap메모리를 공유
+    //int t1, int t2, int t3, int t4: Stack
+    public ScjpPass(int t1, int t2, int t3, int t4){
+        //Heap = Stack
+        //전역 변수 = 지역 변수
+        //멤버 변수 = 지역 변수
+        this.t1 = t1;
+        this.t2 = t2;
+        this.t3 = t3;
+        this.t4 = t4;
+    }
+
+}
+
+
+public class Scjp {
+    public static void main(String[] args) {
+        System.out.println("ScjpPass.BONUS: " + ScjpPass.BONUS);
+
+        //t1은 static이 아님으로 클래스명으로 접근 할 수 없ek
+        //System.out.println(ScjpPass.t1);
+        //heap memory 할당
+        ScjpPass sp = new ScjpPass(85, 90, 80, 70);
+        System.out.println("sp.t1: " + sp.t1);
+        //static변수는 클래스명으로 접근을 권장
+        //System.out.println("sp.BONUS: " + sp.BONUS);
+    }
+}
+```
+
+```
+static 메소드 예제
+//하나의 java 파일안에 클래스가 2개이상 존재하는 경우
+//main()메소드가 있는 오직 하나의 클래스만 public을 선언
+//일반적으로 main() 있으면 무조건 public을 선언하며
+//파일명은 public 클래스명과 일치해야 한다
+
+class SCWCD{
+    int t1=0;
+    int t2=0;
+    int t3=0;
+    int t4=0;
+    static int BONUS=100;
+
+    public SCWCD(){
+    }
+
+    public SCWCD(int t1, int t2, int t3, int t4){
+        this.t1 = t1;
+        this.t2 = t2;
+        this.t3 = t3;
+        this.t4 = t4;
+    }
+
+    //클래스 메소드
+    public static void prLine(){
+        System.out.println("****************");
+        System.out.println("   SOLDESK       ");
+        System.out.println("         JAVA   ");
+        System.out.println("****************");
+    }
+}
+
+
+
+public class SCWCDmain {
+    public static void main(String[] args) {
+        //클래스.static 메소드명
+        SCWCD.prLine();
     }
 }
 ```
