@@ -493,7 +493,7 @@ do-while문 예제
 
 - new 연산자가 클래스로부터 객체 생성(인스턴스화) 역활을 함
 
-## 클래스의 구성 멤버
+### 클래스의 구성 멤버
 
 - 필드
   - 객체의 데이터가 저장되는 곳
@@ -503,7 +503,7 @@ do-while문 예제
 - 메소드와 비슷한 모양이지만 리턴 타입이 없고 클래스 이름과 동일
 - 클래스에 생성자가 명시적으로 선언되어 있는 경우에는 반드시 선언된 생성자를 호출해서 객체 생성해야함(기본생성자 호출 불가)
 
-## 멤버메소드
+### 멤버메소드
 
 - C언어의 함수와 비슷
 - 데이터 처리 기능을 구현
@@ -558,7 +558,7 @@ do-while문 예제
     }
 ```
 
-## 변수의 유효 범위(scope)
+### 변수의 유효 범위(scope)
 
 - 멤버 변수 (instance 변수)
   - 변수가 메소드 밖에 선언되는 변수 (멤버변수,인스턴스변수,필드 라고 한다)
@@ -603,7 +603,7 @@ public class Variable {
 
 ```
 
-## Call By Value / Reference
+### Call By Value / Reference
 
 - Call By Value : 값에 의한 호출
   - 메소드로 한 문자 , 상수 문자열, 숫자를 전달하면 전부 값에 의한 호출이라고 하고 Call By Value 라 한다
@@ -686,7 +686,7 @@ System.out.println(i);//10
 
 - 변경되는 객체가 있을 때 마다 새로운 객체가 만들어진다
 
-## Method Overloading
+### Method Overloading
 
 - 같은 클래스 내에서 같은 이름의 메소드를 여러개 선언하는 것을 말한다
 
@@ -766,7 +766,7 @@ class MethodOverloading{
 }
 ```
 
-## 생성자(Constructor)
+### 생성자(Constructor)
 
 - return type 이 없다
 - 클래스 이름이 같아야함(대소문자 구별)
@@ -869,7 +869,7 @@ public class SchoolMain4 {
 }
 ```
 
-## static 변수(정적,클래스) ,static method(클래스 메소드)
+### static 변수(정적,클래스) ,static method(클래스 메소드)
 
 - 객체를 만들지 않고 변수나,메소드의 사용이 가능
 - 간단한 값을 처리할때 주로 쓰인다
@@ -978,6 +978,84 @@ public class SCWCDmain {
     public static void main(String[] args) {
         //클래스.static 메소드명
         SCWCD.prLine();
+    }
+}
+```
+
+```
+- static 변수는 객체를 여러번 생성해도 한번만 생성된다
+- static 변수는 멤버 메소드에 선언 할 수 없다
+
+class Box {
+  int cnt = 0;
+  static long boxID = 0;
+
+  public Box() {
+    boxID = boxID + 1; //static variable
+    cnt = cnt + 1;    //member variable
+    System.out.println("멤버 변수     cnt: " + cnt);
+    System.out.println("static 변수 BoxID: "+ boxID );
+
+  }
+
+  //멤버 메소드에서는 static변수를 선언할수 없다
+  /*
+  public void staticTest(){
+      static long count=0;
+      count=count+1;
+
+  }
+  */
+
+  //static(class) 메소드에 static 변수를 선언할 수 없다
+  /*
+  public static void staticTest2(){
+      static long count=0;
+      count=count+1;
+
+  }
+  */
+
+}
+
+public class StaticDemo {
+    public static void main(String args[]) {
+        //객체 생성
+        Box mybox1 = new Box();
+        Box mybox2 = new Box();
+        Box mybox3 = new Box();
+    }
+}
+```
+
+```
+값을 변경할 수 없는 final 변수(상수 선언) ex) 1년,12달,요일,1주
+
+class Final{
+    int money = 10000;  //인스턴스 변수
+
+    //값을 변경 할 수 없습니다.
+    final int day = 7;  //1주, final 인스턴스 변수
+    final int week = 4; //한달, final 인스턴스 변수
+
+    //객체를 만들지 않아도 사용할 수 있습니다.
+    //final static 변수
+    final static int month = 12; //1년
+
+    //생성자가 존재 하지만 아무런 처리를 하지 않습니다.
+    public Final(){}
+}
+
+public class Finalmain {
+
+    public static void main(String[] args) {
+        Final fi = new Final();
+        fi.money = 15000;
+        //final변수는 값을 변경(대입)할 수 없습니다.
+        //fi.day = 10;
+        System.out.println("1주일 용돈:" + fi.money * fi.day);
+        System.out.println("1년" + Final.month + "달");
+        //Final.month = 20000;
     }
 }
 ```
