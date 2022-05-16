@@ -1068,4 +1068,52 @@ public class Finalmain {
 
 - private 변수의 처리 로직은 전부 하나의 메소드에 구현되어 객체지향의 핵심 요소인 캡슐화를 지원
 
-  ![접근제한자]()
+  ![접근제한자](https://github.com/yhs0429/Java/blob/master/img/%EC%A0%91%EA%B7%BC%EC%A0%9C%ED%95%9C%EC%9E%90.jpg)
+
+```
+//데이터 클래스
+public class Data{
+    //인스턴스 변수, 멤버 변수
+    private String name=null;
+    private String season=null;
+    private int year = 0;
+
+    //set으로 시작하는 메소드는 setter라고 부름
+    //set은 소문자로, 연결되는 변수명의 첫자는 대문자를 사용
+    //private변수에 값을 대입하는 목적을 가지고 있음
+    //값을 저장함으로 리턴타입은 void를 이용
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public void setSeason(String season){
+        this.season = season;
+    }
+
+    public void setYear(int year){
+        if (year >= 20 && year <= 30){
+            this.year = year;
+        }else{
+            System.out.println("입력될 수 있는 나이는 20~30세 사이입니다.");
+        }
+
+    }
+
+    //get으로 시작하는 메소드는 getter라고 부름
+    //get은 소문자로, 연결되는 변수명의 첫자는 대문자를 사용
+    //private변수에서 값을 가져오는 목적을 가지고 있음
+    //값을 가져옴으로 값에 따른 다양한 데이터타입을 지정
+    public String getName(){
+        return name;
+    }
+
+    public String getSeason(){
+        return season;
+    }
+
+    public int getYear(){
+        return year;
+    }
+
+}
+```
