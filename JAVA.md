@@ -1117,3 +1117,64 @@ public class Data{
 
 }
 ```
+
+#### private method 응용
+
+- private 메소드가 존재하면 반드시 private 메소드를 호출하는 public 메소드가 존재함
+- private 메소드는 클래스 외부에서 호출될 수 없음
+
+```
+class PrivateTest {
+    public int kuk = 0;
+    public int eng = 0;
+    public int sum = 0;
+
+    private void sum(){
+        sum = kuk+eng;
+        if ( sum > 200){
+            System.out.println("점수가 200을 초과했습니다.");
+            sum = 0;
+        }else{
+            System.out.println("합계가 정상적으로 처리되었습니다.");
+        }
+    }
+
+    //Deligate Method
+    public void call_sum(){
+        sum();
+    }
+}
+
+public class PrivateTestMain {
+    public static void main(String[] args) {
+        PrivateTest pt = new PrivateTest();
+        pt.kuk = 90;
+        pt.eng = 95;
+
+        //pt.sum(); //외부에서 호출할 수 없음
+        pt.call_sum();
+        System.out.println("pt.sum(): " + pt.sum);
+    }
+}
+```
+
+#### Garbage Collecting(GC)
+
+- 멤버변수와 객체에 할당된 메모리를 자동으로 회수함 (heap)
+- 메소드안에서 생성된 객체가 메소드의 지역변수에서 참조 한다면 메소드 종료시 자동으로 회수
+- GC가 메모리를 회수하는 일은 우선 순위가 낮은 스레드로 수행 , 일반적인 경우 모든 스레드가 종료된 후 수행
+- gc()를 실행하면 강제로 메모리 회수를 우선순위로 높여주지만 많은 부하를 동반함으로 JVM이 알아서하게둘것!
+
+```
+ public void rMethod(){
+ // test지역변수가 rMethod() 호출이 끝나면 없어지면서
+ // 그 변수가 참조하는 Test객체는 메모리 회수가 됨
+ Test test = new Test();
+
+  }
+
+  Test test = new Test();
+  test = null;  // test의 해쉬코드 지워짐
+```
+
+### 상속(Inheritance)
