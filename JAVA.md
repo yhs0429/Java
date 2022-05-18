@@ -232,11 +232,11 @@ JDK설치 확인
 
   ```
   if(조건식){
-
+  
   	참일 경우 실행;
-
+  
   	참일 경우 실행;
-
+  
   }
   ```
 
@@ -1178,3 +1178,82 @@ public class PrivateTestMain {
 ```
 
 ### 상속(Inheritance)
+
+- 상위 클래스의 특성(필드,메소드)을 하위 클래스에 물려주는 것
+- superclass 상위(부모)클래스 , subclass 하위(자식)클래스
+- 상속을 하면 하위클래스가 구체화 됨
+- 클래스 정의가 간결해짐 
+- 속성보단 메소드를 상속하기위해 많이사용됨 , 상속은 한번에 하나의 클래스만 가능 (C++ 은 2개가능)
+
+```
+public class Person{
+
+}
+public class Student extends Person{ // Person을 상속받는 클래스 Student 선언
+
+}
+public class StudentWorker extends Student { 
+//Student를 상속받는 StudentWorker 선언
+}
+```
+
+```
+멤버변수의 상속
+
+class Movie{ 
+    String prat="영화"; 
+} 
+
+class Korea extends Movie{  //part변수 상속 
+    String m1 = "가문의위기";  
+} 
+
+class Foreign extends Movie{ 
+    String m1 = "박물관이 살아있다.";  
+} 
+
+public class MovieTest { 
+    public static void main(String[] args) { 
+        Korea k = new Korea(); 
+        System.out.println("장르:" + k.prat); 
+        System.out.println("제목:" + k.m1); 
+        Foreign f = new Foreign(); 
+        System.out.println("장르:" + f.prat); 
+        System.out.println("제목:" + f.m1); 
+    } 
+
+} 
+```
+
+```
+메소드의 상속
+class Car{ 
+    public void gear(){ 
+        System.out.println("수동 기어를 사용합니다."); 
+    } 
+} 
+
+class ChildCar extends Car{ 
+    public void auto_gear(){ 
+        System.out.println("자동 기어를 사용합니다."); 
+    } 
+} 
+
+class ChildCar2 extends ChildCar{ 
+    public void auto_gear2(){ 
+        System.out.println("수동/자동 기어를 혼합하여 사용합니다."); 
+    } 
+} 
+
+public class CarTest { 
+
+    public static void main(String[] args) { 
+        ChildCar2 cc2 = new ChildCar2(); 
+        cc2.gear(); 
+        cc2.auto_gear(); 
+        cc2.auto_gear2();         
+    } 
+
+} 
+```
+
