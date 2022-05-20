@@ -232,11 +232,11 @@ JDK설치 확인
 
   ```
   if(조건식){
-
+  
   	참일 경우 실행;
-
+  
   	참일 경우 실행;
-
+  
   }
   ```
 
@@ -1317,3 +1317,139 @@ import  pa.A3;
 ```
 
 #### Method Overriding
+
+- 슈퍼클래스(부모) 와 서브클래스(자식) 메소드 에서 발생
+- 슈퍼클래스의 메소드를 서브클래스에서 재정의 , 슈퍼클래스의 모든 것 동일하게 정의
+- static, private , final 메소드는 오버라이딩 X
+- return 타입이 다른 경우 에러
+- 부모클래스의 메소드는 무시
+
+📌Overriding 기술은 슈퍼클래스의 구기능을 없애는 것이 아니라 유지하면서 서브클래스의 새로운 
+
+​	기능으로 교체하는 목적
+
+```
+class OverB { 
+    void show() { 
+        System.out.println("슈퍼클래스의 메소드 show()"); 
+    } 
+
+    void parent() { 
+        System.out.println("슈퍼클래스에만 있는 메소드 parent()"); 
+    } 
+} 
+
+class SubOverB extends OverB { 
+    //Overriding 
+    void show() { 
+        System.out.println("서브클래스의 메소드 show()"); 
+    } 
+} 
+       
+public class OverrideExam2 { 
+    public static void main(String args[]) { 
+        //슈퍼클래스 객체 생성 
+        OverB ob = new OverB(); 
+        ob.show();  //슈퍼클래스의 메소드 show()  
+        ob.parent(); 
+         
+        //서브클래스 객체 생성 
+        //상속이 무시되면서 서브클래스의 메소드가 수행
+        SubOverB over = new SubOverB(); 
+        over.show();  //서브클래스의 메소드 show() 
+        over.parent(); 
+
+    } 
+} 
+```
+
+#### 객체 형변환
+
+- 상속 관계에서는 부모자식간에 형변환 가능
+- 실제로 메모리상에 생성되는 객체는 부모,자식 클래스 모두 생성되지만 타입만 부모클래스가 됨
+- 오버라이딩시에는 부모클래스 타입이더라도 자식클래스의 메소드가 호출됨 (동적바인딩)
+- 모든 클래스는 Object클래스를 기본적으로 상속받음
+
+1. **업캐스팅**
+   - 프로그램에서 이루어지는 자동타입변환
+   - 서브클래스의 레퍼런스 값을 슈퍼클래스 타입의 변수에 대입
+   - 슈퍼클래스의 멤버만 접근 가능 (자식객체 내에 모든멤버 접근 X)
+
+```
+class  Person {
+  String name;
+  String id;
+
+  public Person(String name) {
+  this.name = name;
+   }
+}
+class  Student extends Person {
+  String grade;
+  String department;
+
+  public Student(String name) {
+  super(name);
+   }
+}
+
+public class UpcastingEx {
+  public static void main(String[] args) {
+  Person  p;
+  Student s = new Student(“이재문”);
+  p = s; // 업캐스팅 발생
+ 
+  System.out.println(p.name); 
+
+
+  }
+}
+```
+
+2. **다운캐스팅**
+   - 슈퍼클래스 레퍼런스를 서브클래스 타입의 변수에 대입
+   - 업캐스팅된 것을 다시 원래대로 되돌리는 것
+
+```
+public class DowncastingEx {
+  public static void main(String[] args) {
+  Person  p = new Student(“홍길동”); // 업캐스팅 발생
+  Student s;
+ 
+  s  = (Student)p; // 다운캐스팅
+
+  System.out.println(s.name); // 오류 없음
+  s.grade = “A”; // 오류 없음
+  }
+}
+```
+
+```
+객체 형변환 예제
+
+class TypeConvert{ 
+    String url = "http://www.kma.go.kr"; 
+
+    public void setUrl(String url){ this.url = url; } 
+    public String getUrl(){ return this.url; } 
+} 
+
+public class TypeConvertTest { 
+
+    public static void main(String[] args) { 
+        TypeConvert tc = new TypeConvert(); 
+        Object obj = tc; //Object 클래스의 메소드만 호출가능 
+        //System.out.println(obj.getUrl()); 
+        System.out.println(tc.getUrl()); 
+         
+        System.out.println(obj.hashCode()); 
+        System.out.println(tc.hashCode()); 
+         
+        TypeConvert tc2 = (TypeConvert)obj; 
+        System.out.println("tc2: " + tc2.getUrl()); 
+        System.out.println("tc2: " + tc2.hashCode()); 
+    } 
+
+} 
+```
+
